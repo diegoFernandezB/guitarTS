@@ -1,5 +1,15 @@
+import type { CartItem, Guitar } from "../types"
 
-export default function  Header({cart, removeFromCart, increaseQuantity, decreaseQuantity, clearCart, isEmpty, cartTotaL}){
+type HeaderProps = {
+    cart :CartItem[]
+    removeFromCart: (id : Guitar['id']) => void
+    increaseQuantity: (id : Guitar['id']) => void
+    decreaseQuantity: (id : Guitar['id']) => void
+    clearCart: () => void
+    isEmpty: boolean
+    cartTotaL: number
+}
+export default function  Header({cart, removeFromCart, increaseQuantity, decreaseQuantity, clearCart, isEmpty, cartTotaL}: HeaderProps){
 
     return(//encapsulando dos elementos en el nivel maximo en un div 
         <header className="py-5 header">
